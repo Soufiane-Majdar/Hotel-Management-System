@@ -1,0 +1,221 @@
+{% extends "base.html" %}{% block content %}
+
+<div class=" row p-4 pl-5 m-4 mt-4 align-items-center">
+    <div class="col-auto  mt-3 col-3 ">
+        <a href="#" class="btn btn-primary">
+            <span class="me-1">
+                            <span class="fas fa-search"></span>
+            </span> Search </a>
+    </div>
+    <div class="col-auto col-7">
+        <label for="exampleInputIconLeft">Location</label>
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><span class="bi bi-pin-map"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pin-map" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z" />
+                                    <path fill-rule="evenodd"
+                                        d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                                </svg></span></span>
+            <input type="text" class="form-control" id="exampleInputIconLeft" placeholder="Where are you going?" aria-label="Search" aria-describedby="basic-addon1">
+        </div>
+    </div>
+
+
+</div>
+
+<div class="section section-md  ">
+
+    <!-- search section -->
+
+
+
+    <!-- Filter section -->
+    <div class="section section-lg py-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="h5">Filters</h2>
+                </div>
+                <div class="col-auto">
+                    <a onclick="clear_all();" class=" p-2 btn btn-gray">clear all</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-md pt-4">
+        <div class="container">
+            <div class="row mb-5 mb-lg-5">
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Price range</h3>
+                            <div class="d-flex mb-3">
+                                <div class="col-md-6 me-2"><label for="priceRangeMin1">Min</label> <input class="form-control" id="minprice" placeholder="0" type="number"></div>
+                                <div class="col-md-6 text-right"><label for="priceRangeMax1">Max</label> <input class="form-control" id="maxprice" placeholder="3000" type="number"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Star rating</h3>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="star1">
+                                <label class="form-check-label" for="star1"> 1 stars </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="star2">
+                                <label class="form-check-label" for="star2"> 2 stars </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="star3">
+                                <label class="form-check-label" for="star3"> 3 stars </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="star4">
+                                <label class="form-check-label" for="star4"> 4 stars </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="star5">
+                                <label class="form-check-label" for="star5"> 5 stars </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Property type</h3>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="Property1">
+                                        <label class="form-check-label" for="Property1"> Hotels </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-1"> <input class="form-check-input" type="checkbox" value="" id="Property2">
+                                        <label class="form-check-label" for="Property2"> Apartments </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="Property3">
+                                        <label class="form-check-label" for="Property3"> Villas </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="Property4">
+                                        <label class="form-check-label" for="Property4"> Houses </label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="Property5">
+                                        <label class="form-check-label" for="Property5"> Guesthouse </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="h5 card-title">Rooms type</h3>
+                            <ul class="list-group text-gray">
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">Single</a> <span class="badge bg-gray badge-pill">123</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">Double</a> <span class="badge bg-gray badge-pill">330</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">Triple</a> <span class="badge bg-gray badge-pill">99</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">Quad</a> <span class="badge bg-gray badge-pill">210</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">Queen</a> <span class="badge bg-gray badge-pill">134</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center border-0 py-1 px-0 font-small">
+                                    <a href="#">King</a> <span class="badge bg-gray badge-pill">84</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Filter section -->
+    <hr class="bg-secondary  mt-0">
+    <div class="section section-md">
+        <div class="container">
+            <!-- Nav Sorting -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-10">
+                    <!-- Nav Wrapper -->
+                    <div class="nav-wrapper position-relative">
+                        <ul class="nav nav-pills nav-fill flex-column flex-sm-row">
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0" data-bs-toggle="tab" href="#">top picks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0" data-bs-toggle="tab" href="#">Stars (highest
+                                    first)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0" data-bs-toggle="tab" href="#">Stars (lowest
+                                    first)</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-sm-3 mb-md-0 active" data-bs-toggle="tab" href="#">Top
+                                    reviewed</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- End of Nav Wrapper -->
+                </div>
+            </div>
+            <!-- end Nav Sorting -->
+
+            {% for room in room_list %}
+            <h3>{{room}}</h3>
+            {% endfor %}
+
+        </div>
+    </div>
+</div> {% if Hotels.has_other_pages %}
+<!-- Pagination -->
+<div class="section section-md m-0">
+    <nav aria-label="navigation" class="d-flex justify-content-center">
+        <ul class="pagination"> {%if Hotels.has_previous %}
+            <li class="page-item">
+                <a class="page-link" aria-label="first link" tabindex="-1" href="{% url 'home' %}?page={{Hotels.previous_page_number}}">Previous</a>
+            </li> {%else%}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="first link" tabindex="-1" href="#">Previous</a>
+            </li> {%endif%}
+            <!--#######################-->{% for i in Hotels.paginator.get_elided_page_range %} {% if Hotels.number == i %}
+            <li class="page-item active">
+                <a class="page-link" href="?page={{i}}">{{i}}</a>
+            </li> {% else %}
+            <li class="page-item ">
+                <a class="page-link" href="?page={{i}}">{{i}}</a>
+            </li> {% endif %} {% endfor %}
+            <!--#######################-->{%if Hotels.has_next %}
+            <li class="page-item">
+                <a class="page-link" aria-label="first link" href="{% url 'home' %}?page={{Hotels.next_page_number}}">Next</a>
+            </li> {%else%}
+            <li class="page-item disabled">
+                <a class="page-link" aria-label="first link" href="#">Next</a>
+            </li> {%endif%}
+        </ul>
+    </nav>
+</div> {%endif%} {% endblock content %}

@@ -1,0 +1,14 @@
+/* hotel description max char */
+
+.hotel-desc {
+    width: auto;
+    height: 40px;
+    overflow: hidden;
+}
+
+.text-200 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}

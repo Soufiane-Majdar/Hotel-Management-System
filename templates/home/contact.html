@@ -1,0 +1,82 @@
+{% extends "base.html" %}{% load static %} {% block content %}
+
+
+
+<!-- Section Contact us -->
+<section class="section section-lg pt-6 ">
+    <div class="container">
+        <!-- Section Message -->
+
+        {% if message %}
+        <div class="row justify-content-center ">
+            <div class="col-auto m-3">
+                <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <span class="far fa-comments me-2"></span>
+                        <strong class="me-auto">Messsage</strong>
+                        <small>{{ message.1 }}</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        {{ message.0 }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+        <div class="row justify-content-center mb-5 mb-lg-6">
+            <div class="col-12 col-lg-8">
+                <!-- Contact Card -->
+                <div class="card border-0 p-2 p-md-3 p-lg-5">
+                    <div class="card-header bg-white border-0 text-center">
+                        <h2>Contact US </h2>
+                        <p>Need help? Ask us!</p>
+                    </div>
+                    <div class="card-body px-0 pt-0">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="name">Your Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon3"><span class="fas fa-user-circle"></span></span>
+                                    {% if request.session.fName %}
+                                    <input type="text" class="form-control" value="{{ request.session.fName }} {{request.session.lName}}" name="name" required="">{% else %}
+                                    <input type="text" class="form-control" placeholder="ex: Majdar Soufiane" name="name" required="">{% endif %}
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form -->
+                            <div class="mb-4">
+                                <label for="email">Your Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon4"><span class="fas fa-envelope"></span></span>
+                                    {% if request.session.email %}
+                                    <input type="email" class="form-control" value="{{ request.session.email}}" name="email" required=""> {% else %}
+                                    <input type="email" class="form-control" placeholder="example@company.com" name="email" required=""> {% endif %}
+                                </div>
+                            </div>
+                            <!-- End of Form -->
+                            <div class="mb-4">
+                                <label for="message">Your Message</label>
+                                <textarea placeholder="Your message" class="form-control" name="message" rows="4" required=""></textarea>
+                            </div>
+                            <!-- End of Form -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn rounded btn-secondary">Send message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- End of Contact Card -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section Contact us -->
+
+{% endblock content %}

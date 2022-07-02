@@ -1,0 +1,203 @@
+<!--
+
+=========================================================
+* Pixel Free Bootstrap 5 UI Kit
+=========================================================
+
+* Product Page: https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Contact us if you want to remove it.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+        {{title}} - booking PFA
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="{{title}} - booking PFA">
+    <meta name="author" content="Soufiane MAJDAR - elBachir BENSLAK - ABDESSAMADE AZZOUZI - Othman ELIDRISSI">
+    <meta name="description" content="a website for boking hotels -PFA project">
+    <link rel="canonical" href="https://appseed.us/django/django-pixel-bootstrap-uikit">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/assets/img/favicon/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/img/favicon/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/img/favicon/logo.png">
+    <link rel="manifest" href="/static/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="/static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Pixel CSS -->
+    <link type="text/css" href="/static/assets/css/pixel.css" rel="stylesheet">
+
+    <!-- simple CSS -->
+    <link type="text/css" href="/static/css/main.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <header class="header-global bg-dark my-5">
+        <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-dark">
+            <div class="container position-relative">
+                <a class="navbar-brand me-lg-5" href="./index.html">
+                    <img class="navbar-brand-dark" src="/static/assets/img/brand/logo-dark.png" alt="Logo light">
+                    <img class="navbar-brand-light" src="/static/assets/img/brand/logo.png" alt="Logo dark">
+                </a>
+                <div class="navbar-collapse collapse me-auto" id="navbar_global">
+                    <div class="navbar-collapse-header">
+                        <div class="row">
+                            <div class="col-6 collapse-brand">
+                                <a href="./index.html">
+                                    <img src="/static/assets/img/brand/logo.png" alt="Themesberg logo">
+                                </a>
+                            </div>
+                            <div class="col-6 collapse-close">
+                                <a href="#navbar_global" class="fas fa-times" data-bs-toggle="collapse" data-bs-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" title="close" aria-label="Toggle navigation"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                        <li class="nav-item dropdown">
+                            <a href="{% url 'home' %}g" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="placeDropdown" aria-expanded="false">
+                                Places to stay
+                                <span class="fas fa-angle-down nav-link-arrow ms-1"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="placeDropdown">
+                                <div class="col-auto px-0">
+                                    <div class="list-group list-group-flush">
+                                        <a href="{% url 'home' %}" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
+                                            <span class="icon icon-sm"><span class="bi bi-building"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+                                                <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+                                              </svg></span></span>
+                                            <div class="ms-4">
+                                                <span class="d-block font-small fw-bold mb-0">Stay anywhere, anytime</span>
+                                                <span class="small">Filters!</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link " id="componentsDropdown" aria-expanded="false">
+                                Become a Host
+                            </a>
+
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" id="supportDropdown" aria-expanded="false">
+                                Support
+                                <span class="fas fa-angle-down nav-link-arrow ms-1"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg" aria-labelledby="supportDropdown">
+                                <div class="col-auto px-0">
+                                    <div class="list-group list-group-flush">
+                                        <a href="{% url 'contact' %}" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-0 py-3 px-lg-4">
+                                            <span class="icon icon-sm"><span class="fas fa-microphone-alt"></span></span>
+                                            <div class="ms-4">
+                                                <span class="d-block font-small fw-bold mb-0">Support</span>
+                                                <span class="small">Need help? Ask us!</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center">
+                    {% if request.session.USER %}
+                    <a class="btn btn-outline-gray-100 mb-sm-3 me-2  mb-md-0" href="{% url 'profile' %}"><span class="far fa-user-circle me-2 link-spanne"  ></span>Profile</a>
+                    <a class="btn btn-outline-gray-100 mb-sm-3 me-2 mb-md-0" href="{% url 'logout'%}"><span class="me-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        </svg>
+                    </span>Logout</a> {% else %}
+                    <a class="btn btn-outline-gray-100 mb-sm-3 mb-md-0" href="{% url 'login'%}"><span class="far fa-user-circle me-2 link-spanne"  ></span>login</a> {% endif %}
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- end navbar -->
+
+
+
+
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+
+
+
+
+
+
+    <footer class="footer pt-3 pb-5 bg-dark text-white">
+        <div class="container">
+
+            <hr class="bg-secondary my-3 my-lg-5">
+            <div class="row">
+                <div class="col mb-md-0">
+                    <a href="{% url 'home' %}" target="_blank" class="d-flex justify-content-center mb-3">
+                        <img src="/static/assets/img/brand/logo-dark.png" height="30" class="me-2" alt="Themesberg Logo">
+                        <p class="text-white fw-bold footer-logo-text m-0">Booking PFA</p>
+                    </a>
+                    <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                        <p class="fw-normal font-small mb-0">
+                            © Booking PFA - coded by team-IIR.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core -->
+    <script src="/static/assets/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="/static/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/assets/vendor/headroom.js/dist/headroom.min.js"></script>
+
+    <!-- Vendor JS -->
+    <script src="/static/assets/vendor/onscreen/dist/on-screen.umd.min.js"></script>
+    <script src="/static/assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="/static/assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="/static/assets/vendor/vivus/dist/vivus.min.js"></script>
+    <script src="/static/assets/vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Pixel JS -->
+    <script src="/static/assets/js/pixel.js"></script>
+    <!-- simple js -->
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

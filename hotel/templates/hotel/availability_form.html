@@ -1,0 +1,48 @@
+{% extends "base.html" %}{% load static %} {% block content %}
+
+<!-- Section login -->
+<section class="section section-lg pt-6 ">
+    <div class="container">
+        <div class="row justify-content-center">
+
+
+            {% if message %}
+            <div class="row justify-content-center ">
+                <div class="col-auto m-3">
+                    <div class="toast bg-primary text-white fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <span class="far fa-comments me-2"></span>
+                            <strong class="me-auto">Messsage</strong>
+                            <small>{{ message.1 }}</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            {{ message.0 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="col-12 d-flex align-items-center justify-content-center">
+
+
+
+
+                <div class="signin-inner my-4 my-lg-0 bg-white shadow-soft border rounded border-gray-300 p-4 p-lg-5 w-100 fmxw-500">
+                    <div class="text-center text-md-center mb-4 mt-md-0">
+                        <h1 class="mb-0 h3">BOOKING A ROOM</h1>
+                    </div>
+
+                    <form action="" method="post">
+                        {% csrf_token %} {{form.as_p}}
+                        <button type="submit">Book Room</button>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
