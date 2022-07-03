@@ -11,7 +11,7 @@ class Room(models.Model):
     ("DEL", "deluxe"),
     ("BAS","basic"),    
     ("QUE","Queen"),    
-    ("QIN","King"),    
+    ("KIN","King"),    
     )
 
     number = models.IntegerField()
