@@ -13,8 +13,15 @@ class Room(models.Model):
     ("QUE","Queen"),    
     ("KIN","King"),    
     )
-
+    name = models.CharField(max_length=300,blank=True)
     number = models.IntegerField()
+    price=models.CharField(max_length=300,blank=True)
+    rating=models.FloatField(default=8.9,blank=True)
+    review=models.CharField(max_length=500,blank=True)
+    img=models.CharField(max_length=500,blank=True)
+    adress=models.CharField(max_length=500,blank=True)
+    Description=models.TextField(blank=True)
+    facilities=models.TextField(blank=True)
     category = models.CharField(max_length=3, choices = ROOM_CATEGORIES)
     beds = models.IntegerField(default=1)
     capacity = models.IntegerField(default=1)
