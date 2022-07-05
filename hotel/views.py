@@ -19,7 +19,7 @@ def RoomListView(request):
     title="Home"
 
 
-    p =Paginator(Hotels,12)
+    p =Paginator(Hotels,9)
 
     #number of pages
 
@@ -79,7 +79,7 @@ class RoomDetailView(View):
             if len(available_rooms)>0:
                     room=available_rooms[0]
                     booking = Booking.objects.create(
-                        user=User.objects.get(email= self.request.session['USER'][4]),### USER session
+                        user=User.objects.get(email= self.request.session['USER']["email"]),### USER session
                         room = room,
                         check_in=data['check_in'],
                         check_out=data['check_out']
@@ -109,7 +109,20 @@ class RoomDetailView(View):
                         }
                     return render(self.request,"hotel/room_detail_view.html",context)
         else:
-            return HttpResponse("login first.")
+            num=self.kwargs.get('num',None)
+            room_list = Room.objects.filter(number=num)
+            form = AvailabilityForm(request.POST)
+
+            message=["You have to login first",'Error']
+            if len(room_list)>0:
+                room= room_list[0]
+                context ={
+                                'room':room,
+                                'form':form,
+                                'title':"Booking a Room",
+                                'message':message
+                            }
+            return render(self.request,"hotel/room_detail_view.html",context)
 
 
 class BookingView(FormView):
@@ -123,13 +136,13 @@ class BookingView(FormView):
             room_list = Room.objects.filter(category=data['room_category'])
             available_rooms=[]
             for room in room_list:
-                if check_availability(room,data['check_in'],data['check_out']):
+                if (room,data['check_in'],data['check_out']):
                     available_rooms.append(room)
             
             if len(available_rooms)>0:
                 room=available_rooms[0]
                 booking = Booking.objects.create(
-                    user=User.objects.get(email= self.request.session['USER'][4]),### USER session
+                    user=User.objects.get(email= self.request.session['USER']["email"]),### USER session
                     room = room,
                     check_in=data['check_in'],
                     check_out=data['check_out']

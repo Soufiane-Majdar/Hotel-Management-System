@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import User,Erreur
+
+
 # Create your views here.
 
 
@@ -32,9 +34,18 @@ def login(request):
                 ### Add User to Session
                 
                 #uname=str(check_user[0].userName)
-                request.session['USER'] = [check_user[0].role,check_user[0].userName,check_user[0].fName,check_user[0].lName,check_user[0].email]
-                print(check_user[0])
-                print(request.session['USER'][0])
+                request.session['USER'] = {
+                    'role':check_user[0].role,
+                    'userName':check_user[0].userName,
+                    'fName':check_user[0].fName,
+                    'lName':check_user[0].lName,
+                    'email':check_user[0].email,
+                    'img':str(check_user[0].img),
+                    'about':check_user[0].about,
+                    'adress':check_user[0].adress,
+                    }
+                #print(check_user[0])
+                #print(request.session['USER'][0])
                 #request.session['USER']=check_user[1]
                 # request.session['fName']=check_user[0].fName
                 # request.session['lName']=check_user[0].lName
@@ -101,10 +112,25 @@ def signup(request):
 
 def profile(request):
     if 'USER' in request.session:
+         check_user=User.objects.filter(email=request.session['USER']["email"])
+         request.session['USER'] = {
+                    'role':check_user[0].role,
+                    'userName':check_user[0].userName,
+                    'fName':check_user[0].fName,
+                    'lName':check_user[0].lName,
+                    'email':check_user[0].email,
+                    'img':str(check_user[0].img),
+                    'about':check_user[0].about,
+                    'adress':check_user[0].adress,
+                    }
          title="Profile"
+         print(request.session['USER'])
          return render(request,'user/profile.html',{'title':title})
     else:
         title="Home"
         return render(request,'home/home.html',{'title':title})
 
 
+def Host(request):
+        title="Host"
+        return render(request,'host/becam_host.html',{'title':title})

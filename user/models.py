@@ -10,6 +10,14 @@ class User(models.Model):
     password = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
 
+
+    img=models.ImageField(upload_to='images/User',null=True,blank=True)
+    about = models.TextField(null=True,blank=True)
+    adress = models.CharField(max_length=200,blank=True)
+
+
+
+
     def __str__(self):
         return self.userName
 

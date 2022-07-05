@@ -1,4 +1,4 @@
-{% load static %} {% block content %}
+{% extends "base.html" %}{% load static %} {% block content %}
 
 <!-- Section Profile  -->
 <div class="section section-md">
@@ -9,9 +9,12 @@
                     <div class="card-body px-5 py-5 text-center text-md-left">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <img src="/static/imgs/avatar.jpeg" class="rounded-circle img-thumbnail image-lg border-secondary p-2" alt="Avatar">
-                                <h1 class="my-4">{{ request.session.USER.1 }} {{ request.session.USER.2 }}</h1>
-                                <h2 class="h5 fw-normal text-gray mb-4"><span class="fas fa-map-marker-alt me-2"></span> your location </h2>
+                                {% if request.session.USER.img %}
+                                <img src="/media/{{ request.session.USER.img }}" class="rounded-circle img-thumbnail image-lg border-secondary p-2" alt="Avatar"> {% else %}
+                                <img src="/static/imgs/avatar.jpeg" class="rounded-circle img-thumbnail image-lg border-secondary p-2" alt="Avatar"> {% endif %}
+
+                                <h1 class="my-4">{{ request.session.USER.lName }} {{ request.session.USER.fName }}</h1>
+                                <h2 class="h5 fw-normal text-gray mb-4"><span class="fas fa-map-marker-alt me-2"></span> {{ request.session.USER.adress }}</h2>
                                 <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0">
                                 </ul>
                             </div>
@@ -21,7 +24,7 @@
                                     <span class="me-1">
                                         <span class="far fa-sun "></span>
                                     </span>
-                                    Settings
+                                    edit
                                 </a>
                             </div>
                         </div>
@@ -36,8 +39,10 @@
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
                     <li class="list-group-item rounded-0 py-4">
                         <div class="d-flex"><span class="icon icon-sm me-3 d-none d-xl-inline lh-200"><span class="fas fa-globe-europe"></span></span>
-                            <div class="media-body d-block"><span class="h5">Language:</span>
-                                <div class="text-gray mt-2"></div>
+                            <div class="media-body d-block"><span class="h5">About:</span>
+                                <div class="text-gray mt-2">
+                                    {{ request.session.USER.about }}
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -48,8 +53,11 @@
                 <ul class="list-group list-group-transparent list-group-flush list-group-borderless mb-0">
                     <li class="list-group-item rounded-0 py-4">
                         <div class="d-flex"><span class="icon icon-sm me-3 d-none d-xl-inline lh-200"><span class="fas fa-mobile-alt"></span></span>
-                            <div class="media-body d-block"><span class="h5">Phone number:</span>
-                                <div class="text-gray mt-2"> </div>
+                            <div class="media-body d-block"><span class="h5">Role:</span>
+                                <div class="text-gray mt-2">
+                                    {{ request.session.USER.role }}
+
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -60,7 +68,7 @@
                     <li class="list-group-item rounded-0 py-4">
                         <div class="d-flex"><span class="icon icon-sm me-3 d-none d-xl-inline lh-200"><span class="far fa-paper-plane"></span></span>
                             <div class="media-body d-block"><span class="h5">Email:</span>
-                                <div class="text-gray mt-2"><a href="#">{{ request.session.USER.3 }}</a></div>
+                                <div class="text-gray mt-2"><a href="#">{{ request.session.USER.email }}</a></div>
                             </div>
                         </div>
                     </li>
