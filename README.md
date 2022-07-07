@@ -1,4 +1,4 @@
-# Hotel-Management-System
+# HOTEL MANAGEMENT SYSTEM IN DJANGO
 
 ## Demo
 
